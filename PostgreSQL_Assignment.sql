@@ -129,3 +129,10 @@ FROM sightings
 GROUP BY
     name
 ORDER BY name ASC;
+
+-- problems - 5
+SELECT common_name
+FROM species
+    LEFT JOIN sightings ON species.species_id = sightings.species_id
+WHERE
+    sightings.sighting_id is NULL;
