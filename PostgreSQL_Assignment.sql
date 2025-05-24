@@ -120,6 +120,6 @@ SELECT count(DISTINCT species_id) AS unique_species_count
 FROM sightings;
 
 -- problems - 3
-SELECT * FROM sightings WHERE location LIKE '%Pass';
+SELECT * FROM sightings WHERE location LIKE '%Pass%';
 
 -- problems - 4
