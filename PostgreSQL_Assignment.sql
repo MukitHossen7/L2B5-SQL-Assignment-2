@@ -73,7 +73,6 @@ VALUES (
     );
 
 --insert data in sightings  table
-
 INSERT INTO
     sightings (
         species_id,
@@ -111,4 +110,9 @@ VALUES (
         NULL
     );
 
-SELECT * FROM sightings;
+-- problems - 1
+INSERT INTO
+    rangers (name, region)
+VALUES ('Derek Fox', 'Coastal Plains');
+
+-- problems - 2
