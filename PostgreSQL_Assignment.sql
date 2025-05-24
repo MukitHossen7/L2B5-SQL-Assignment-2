@@ -116,3 +116,10 @@ INSERT INTO
 VALUES ('Derek Fox', 'Coastal Plains');
 
 -- problems - 2
+SELECT count(DISTINCT species_id) AS unique_species_count
+FROM sightings;
+
+-- problems - 3
+SELECT * FROM sightings WHERE location LIKE '%Pass';
+
+-- problems - 4
