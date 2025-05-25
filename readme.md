@@ -77,3 +77,42 @@ CREATE TABLE students (
 );
 
 ```
+
+# 4. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
+
+## উত্তর :
+
+JOIN হলো SQL-এর এমন একটি শক্তিশালী অপারেশন, যার সাহায্যে আমরা দুই বা ততোধিক টেবিলের মধ্যে সম্পর্ক তৈরি করে একসাথে ডেটা আনতে পারি। আমরা সাধারণত ডেটাবেসে সব তথ্য এক টেবিলে রাখি না। বরং, আলাদা টেবিলে আলাদা ধরনের তথ্য রাখি। এই JOIN না থাকলে, একাধিক টেবিল থেকে ডেটা একসাথে পাওয়া অত্যন্ত কঠিন হয়ে যেত।
+
+## How does JOIN work in PostgreSQL?
+
+PostgreSQL-এ JOIN করার সময় সাধারণত common column ব্যবহার করে ডেটা দেখানো হয়।
+
+### students টেবিল:
+
+```
+| id  | name  |
+| --- | ----- |
+| 1   | Mim   |
+| 2   | Rafi  |
+```
+
+### Courses টেবিল:
+
+```
+| id  | student_id (FK) | course_name |
+| --- | --------------- | ----------- |
+| 1   | 1               | React       |
+| 2   | 2               | Node.js     |
+```
+
+### PostgreSQL JOIN syntax:
+
+```
+SELECT students.name, courses.course_name
+FROM students
+JOIN courses
+ON students.id = courses.student_id;
+```
+
+এখানে students.id এবং courses.student_id এর মাধ্যমে PostgreSQL দুই টেবিলকে JOIN করেছে। JOIN অপারেশনের ক্ষেত্রে সাধারণত আমরা foreign key ব্যবহার করে থাকি।
