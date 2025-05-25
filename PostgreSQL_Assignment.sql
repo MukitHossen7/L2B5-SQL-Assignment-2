@@ -185,9 +185,3 @@ WHERE
         WHERE
             sightings.ranger_id IS NULL
     );
-
-SELECT * FROM rangers
-
-SELECT * FROM species;
-
-SELECT * FROM sightings;
