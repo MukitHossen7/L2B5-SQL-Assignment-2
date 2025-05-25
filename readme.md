@@ -116,3 +116,33 @@ ON students.id = courses.student_id;
 ```
 
 এখানে students.id এবং courses.student_id এর মাধ্যমে PostgreSQL দুই টেবিলকে JOIN করেছে। JOIN অপারেশনের ক্ষেত্রে সাধারণত আমরা foreign key ব্যবহার করে থাকি।
+
+# 5. How can you modify data using UPDATE statements?
+
+## উত্তর :
+
+আমরা যখন ডেটাবেজে থাকা কোন তথ্য পরিবর্তন করতে চাই, তখন UPDATE স্টেটমেন্ট ব্যবহার করি। UPDATE করার সময় WHERE clause ব্যবহার করতে হবে। যদি ব্যবহার না করি তাহলে পুরো টেবিলের সব row আপডেট হয়ে যাবে
+
+### UPDATE Syntax:
+
+```
+UPDATE table_name
+   SET column1 = value1
+WHERE condition;
+```
+
+```
+| id | name  |
+| -- | ----- |
+| 1  | Mukit |
+| 2  | Rafi  |
+
+```
+
+Mukit এর নাম পরিবর্তন করে `Md. Mukit Hasan` করতে তাহলে update কোড হবে:
+
+```
+UPDATE students
+  SET name = 'Md. Mukit Hasan'
+WHERE id = 1;
+```
