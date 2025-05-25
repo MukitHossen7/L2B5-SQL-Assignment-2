@@ -131,6 +131,10 @@ UPDATE table_name
 WHERE condition;
 ```
 
+### UPDATE Example:
+
+`students টেবিল`
+
 ```
 | id | name  |
 | -- | ----- |
