@@ -175,8 +175,19 @@ SELECT
     END AS time_of_day
 FROM sightings;
 
+-- problem - 9
+DELETE FROM rangers
+WHERE
+    ranger_id IN (
+        SELECT rangers.ranger_id
+        FROM rangers
+            LEFT JOIN sightings ON rangers.ranger_id = sightings.ranger_id
+        WHERE
+            sightings.ranger_id IS NULL
+    );
+
+SELECT * FROM rangers
+
 SELECT * FROM species;
 
-SELECT * FROM rangers;
-
-SELECT * FROM rangers;
+SELECT * FROM sightings;
