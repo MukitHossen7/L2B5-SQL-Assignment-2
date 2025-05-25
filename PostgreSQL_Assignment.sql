@@ -147,12 +147,14 @@ ORDER BY sighting_time DESC
 LIMIT 2;
 
 -- problems - 7
-
-SELECT * FROM species;
-
-SELECT * FROM rangers;
-
-SELECT * FROM rangers;
+UPDATE species
+SET
+    conservation_status = 'Historic'
+WHERE
+    extract(
+        YEAR
+        FROM discovery_date
+    ) < 1800;
 
 -- problem - 8
 SELECT
@@ -172,3 +174,9 @@ SELECT
         ) BETWEEN 18 AND 23  THEN 'Evening'
     END AS time_of_day
 FROM sightings;
+
+SELECT * FROM species;
+
+SELECT * FROM rangers;
+
+SELECT * FROM rangers;
