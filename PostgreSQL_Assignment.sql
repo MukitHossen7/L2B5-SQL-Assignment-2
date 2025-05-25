@@ -145,3 +145,30 @@ FROM
     JOIN species ON sightings.species_id = species.species_id
 ORDER BY sighting_time DESC
 LIMIT 2;
+
+-- problems - 7
+
+SELECT * FROM species;
+
+SELECT * FROM rangers;
+
+SELECT * FROM rangers;
+
+-- problem - 8
+SELECT
+    sighting_id,
+    CASE
+        WHEN EXTRACT(
+            HOUR
+            FROM sighting_time
+        ) BETWEEN 0 AND 11  THEN 'Morning'
+        WHEN EXTRACT(
+            HOUR
+            FROM sighting_time
+        ) BETWEEN 12 AND 17  THEN 'Afternoon'
+        WHEN EXTRACT(
+            HOUR
+            FROM sighting_time
+        ) BETWEEN 18 AND 23  THEN 'Evening'
+    END AS time_of_day
+FROM sightings;
